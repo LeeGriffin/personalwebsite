@@ -1,0 +1,167 @@
+/* master sytles 60b0f4 */
+
+body{
+  font-family: "Playfair Display", sans-serif;
+  margin: 0px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
+.nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 38px;
+}
+
+.left-side{
+  display: flex;
+}
+
+.nav-wrapper > .left-side > div{
+  margin-right: 20px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+  height: 20px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+  border-bottom: 1.5px solid black;
+}
+
+.nav-link-wrapper a:hover {
+  color: black;
+}
+
+.active-nav-link {
+  border-bottom: 1.5px soild black;
+}
+
+.active-nav-link a {
+  color: black !important;
+}
+
+/* stlyes for portfoilo */
+.portfoilo-items-wrapper {
+  display: grid;
+  grid-template-columns: auto  1fr 1fr 1fr;
+}
+
+.portfoilo-item-wrapper {
+  position: relative;
+}
+
+
+.portfoilo-img-background {
+  height: 325px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-no-repeat;
+}
+
+.img-text-wrapper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.logo-wrapper img {
+  max-width: 30%;
+  margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle {
+  transition: 1s;
+  font-weight: 600;
+  font-size: 0.8em;
+  color: transparent;
+}
+
+.img-text-wrapper:hover .subtitle {
+  font-weight: 600;
+  font-size: 0.8em;
+  color: white;
+}
+
+.img-darken {
+  transition: 1s;
+  filter: brightness(10%);
+}
+
+/* stlyes for timeline */
+.status-timeline-wrapper {
+  height: 100%;
+  vertical-align: right;
+  padding-left: 20%;
+  padding-right: 100px;
+  padding-top: 30%;
+  font-size: 0.8em;
+}
+
+.status-timeline-wrapper-subtext {
+  padding-left: 29%;
+  font-size: 0.7em;
+  text-transform: lowercase;
+}
+
+
+
+/* about page styles */
+.two-column-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+  width: 100%
+}
+
+.profile-content-wrapper {
+  padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+  color: lightseagreen;
+}
+
+
+
+/* info page styles */
+.two-column-wrapper-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-wrapper-info img {
+  width: 100%
+}
+
+.content-wrapper-info {
+  padding: 30px;
+}
+
+.content-wrapper-info h1 {
+  color: lightseagreen;
+}

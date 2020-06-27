@@ -32,31 +32,50 @@
       <div class="content-wrapper">
         <div class="two-column-wrapper">
            <div class="image-wrapper-info">
-            <img src="photos/trees.jpg">
+            <img src="photos/info-photos/info-ele.jpg">
            </div>
            <div class="content-wrapper-info">
-             <h1>Elevators!</h1>
+             <h1>Forecasting Elevators!</h1>
+             <h2>Background</h2>
 
-            <p>I wanted to make a smarter elevator</p>
-            <p>I felt that elevators waiting a their last floor, waiting to be called was just about the least effiecnt thing they could do</p>
+            <p>So, I really did not like the elevators at our old building</p>
+            <p>It seemed like an entriniy between the time that you called an elevator and one showed up </p>
+            <p>I felt that elevators could be made better, and that waiting around to be called was inefficient</p>
             <p>My theroy was that in the mornings, everyone probably wanted to catch an elevator from the first floor on their way to work</p>
-            <p>And in eveneings, the oppostie would occur. Few people if anybody, was catching an elevator from the first floor, but everyone was going there</p>
-            <p>So I configued an old financal forcasting model to work with elevators</p>
+            <p>And in eveneings, the oppostie would occur. Few people if anybody, would catch an elevator from the first floor, but everyone wanted to go there</p>
+            <p>So, I configued an old financal forcasting model (ARMA) to work with elevators</p>
             <p>I used time of day, and floor where the elevator was called as inputs </p>
-            <p>With the goal of reducing "floors missed" </p>
+            <p>With the goal of reducing "floors missed" when a person comes to elevator</p>
            </div>
         </div>
         <div class="two-column-wrapper-info">
            <div class="image-wrapper-info">
-            <img src="photos/more_trees.jpg">
+            <img src="photos/info-photos/screenshot4.png">
            </div>
            <div class="content-wrapper-info">
-             <h2>Here is some content</h2>
+             <h2>Process</h2>
 
-            <p>Whoop whoop this is my first paragraph, not really sure what to wrtie about I just want to use more than one line with this bad boy</p>
-            <p>Here is my next line</p>
-            <p>It would be awesome to make some picutres of scotts art</p>
-            <p>or gregs woodwooking, really anything tbh</p>
+            <p>Finding actual data about what time and what floor people got on an elevators turned out to be very difficult</p>
+            <p>Who know that kind of data was not just "out there"</p>
+            <p>So I ended up making a few sets of semi-random data</p>
+            <p>I collapsed the the exact times into 10 mintue intervals to reduce nosie (My thought is,
+               this would not have a huge impact, because the largest gains came at the beinging of the day)</p>
+            <p>Then run an ARMA on that data, then compare it to how a elevator would normally preform</p>
+            <p>I also wanted to compare it to the theoretical situation where the elevator would go to a random floor between trips becuase that sounded fun</p>
+           </div>
+        </div>
+        <div class="two-column-wrapper-info">
+           <div class="image-wrapper-info">
+            <img src="photos/info-photos/screenshot2.png">
+           </div>
+           <div class="content-wrapper-info">
+             <h2>Results</h2>
+
+            <p>On the left were the results of using the forecasted floor vs. a random floor vs. the perious floor</p>
+            <p>Its kinda hard to tell, but using the forecasted floor made the elevator on avg about 50% closer to where it needed to be</p>
+            <p>And that moving randomly between pickups was just about as good as waiting</p>
+            <p>Theoretical next steps would be to get actual data to work with and try out different models to see if I could imporove even more</p>
+            <a href="https://github.com/LeeGriffin/Elevators-">Link to Github, where all this stuff is stored!</a>
            </div>
         </div>
       </div>

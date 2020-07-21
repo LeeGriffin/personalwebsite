@@ -1,7 +1,7 @@
 /* master sytles 60b0f4 */
 
 body{
-  font-family: "Playfair Display", sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0px;
 }
 
@@ -26,6 +26,7 @@ body{
   font-size: 0.9em;
   text-transform: uppercase;
 }
+
 
 .nav-link-wrapper {
   height: 20px;
@@ -56,9 +57,14 @@ body{
 }
 
 /* stlyes for portfoilo */
-.portfoilo-items-wrapper {
+.portfoilo-items-wrapper-top {
   display: grid;
-  grid-template-columns: auto  1fr 1fr 1fr;
+  grid-template-columns: auto  1fr 1fr;
+}
+
+.portfoilo-items-wrapper-bottom {
+  display: grid;
+  grid-template-columns: auto 2fr;
 }
 
 .portfoilo-item-wrapper {
@@ -126,12 +132,24 @@ body{
   text-transform: lowercase;
 }
 
-
+.end-text {
+  color: white;
+  padding-left: 70%;
+  padding-top: 19.3%;
+  position: relative;
+}
 
 /* about page styles */
 .two-column-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.inside-three-column-wrapper {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
 }
 
 .profile-image-wrapper img {
@@ -143,7 +161,7 @@ body{
 }
 
 .profile-content-wrapper h1 {
-  color: lightseagreen;
+  color: black;
 }
 
 
@@ -163,5 +181,76 @@ body{
 }
 
 .content-wrapper-info h1 {
-  color: lightseagreen;
+  color: black;
+}
+
+
+
+/* info page styles */
+.column-wrapper-credits {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.image-wrapper-credits img {
+  width: 100%
+}
+
+.content-wrapper-credits {
+  padding: 30px;
+}
+
+.content-wrapper-credits h1 {
+  color: black;
+}
+
+
+
+/*sytles for botom of the page*/
+.nav-wrapper-bottom{
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.center-side{
+  display: flex;
+}
+
+.nav-wrapper-bottom > .center-side > div{
+  margin-right: 20px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+
+.nav-link-wrapper-bottom {
+  height: 20px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+  margin-top: 2px
+}
+
+.nav-link-wrapper-bottom a {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+
+.nav-link-wrapper-bottom:hover {
+  border-bottom: 1.5px solid black;
+}
+
+.nav-link-wrapper-bottom a:hover {
+  color: black;
+}
+
+.active-nav-link {
+  border-bottom: 1.5px soild black;
+}
+
+.active-nav-link a {
+  color: black !important;
 }

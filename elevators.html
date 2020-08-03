@@ -4,10 +4,14 @@
     <title>Elevators</title>
     <meta charset="utf-8" />
     <title>Page Elevators</title>
+    <link rel="shortcut icon" href="photos/leepoints16.ico" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script>
+  document.body.className = 'fade';
+  </script>
     <div class="container">
       <div class="nav-wrapper">
         <div class="left-side">
@@ -30,57 +34,60 @@
       </div>
 
       <div class="content-wrapper">
+        <h1>Forecasting Elevators!</h1>
         <div class="two-column-wrapper">
-           <div class="image-wrapper-info">
-            <img src="photos/info-photos/info-ele.jpg">
-           </div>
-           <div class="content-wrapper-info">
-             <h1>Forecasting Elevators!</h1>
-             <h2>Background</h2>
+          <div class="content-wrapper-info">
+            <h2>Background</h2>
 
-            <p>So, I really did not like the elevators at our old building</p>
-            <p>It seemed like an entriniy between the time that you called an elevator and one showed up </p>
-            <p>I felt that elevators could be made better, and that waiting around to be called was inefficient</p>
-            <p>My theroy was that in the mornings, everyone probably wanted to catch an elevator from the first floor on their way to work</p>
-            <p>And in eveneings, the oppostie would occur. Few people if anybody, would catch an elevator from the first floor, but everyone wanted to go there</p>
-            <p>So, I configued an old financal forcasting model (ARMA) to work with elevators</p>
+            <p>So... I really did not like the elevators at our old building</p>
+            <p>It seemed like an eternity between the time that you called an elevator and one showed up </p>
+            <p>I felt that elevators would almost get (stuck) at the top floor(s) and would take forever if someone happened to be on the first floor, you know that uncommon floor we sometimes use</p>
+            <p>My theory was that in the mornings, everyone probably wanted to catch an elevator from the first floor on their way to work</p>
+            <p>And in evenings, the opposite would occur. Few people if anybody, would catch an elevator from the first floor, but everyone wanted to go there</p>
             <p>I used time of day, and floor where the elevator was called as inputs </p>
             <p>With the goal of reducing "floors missed" when a person comes to elevator</p>
-           </div>
-        </div>
-        <div class="two-column-wrapper-info">
+          </div>
            <div class="image-wrapper-info">
             <img src="photos/info-photos/screenshot4.png">
            </div>
            <div class="content-wrapper-info">
-             <h2>Process</h2>
+            <h2>Process</h2>
 
-            <p>Finding actual data about what time and what floor people got on an elevators turned out to be very difficult</p>
-            <p>Who knew that kind of data was not just "out there"</p>
-            <p>So I ended up making a few sets of semi-random data</p>
-            <p>I collapsed the the exact times into 10 mintue intervals to reduce nosie (My thought is,
-               this would not have a huge impact, because the largest gains came at the beinging of the day)</p>
-            <p>Then run an ARMA on that data, then compare it to how a elevator would normally preform</p>
-            <p>I also wanted to compare it to the theoretical situation where the elevator would go to a random floor between trips becuase that sounded fun</p>
+            <p>I collapsed the the exact times into 10 minute intervals to reduce noise/smooth the forecast/make the forecast usable</p>
+            <p>Turn that into time series data (with seasonally of 144)</p>
+            <p>(There are 144 ten min intervals in a day)</p>
+            <p>Then run an ARMA on that data, there is a nifty package in R that automatically (auto.arima). I did end up having to force some kind of seasonality forecast though</p>
+            <p>(I figured there was no long term trend, so no need for an ARIMA)</p>
+            <p>Finally, take the forecasted floor, and compare in a day (with all observations) to how the same elevator would normally perform</p>
+            <p>I also wanted to compare it to the theoretical situation where the elevator would go to a random floor between trips because that sounded fun</p>
            </div>
-        </div>
-        <div class="two-column-wrapper-info">
-           <div class="image-wrapper-info">
-            <img src="photos/info-photos/screenshot2.png">
+           <div class="content-wrapper-info">
+              <h2>Data Woes</h2>
+
+              <p>Initially, I thought that finding some open source data set on how people used elevators would be easy</p>
+              <p>Turns out, finding actual data about what time and what floor people got on an elevators was actually very difficult</p>
+              <p>To the point where I never actually found any</p>
+              <p>Who knew that kind of data was not just "out there" ¯\_(ツ)_/¯ </p>
+              <p>I ended up compromising and making two sets, one using semi-random data over the course of a day, the other over the course of five days</p>
            </div>
            <div class="content-wrapper-info">
              <h2>Results</h2>
 
-            <p>On the left were the results of using the forecasted floor vs. a random floor vs. the perious floor</p>
-            <p>Its kinda hard to tell, but using the forecasted floor made the elevator on avg about 50% closer to where it needed to be</p>
-            <p>And that moving randomly between pickups was just about as good as waiting</p>
-            <p>Theoretical next steps would be to get actual data to work with and try out different models to see if I could imporove even more</p>
-            <a href="https://github.com/LeeGriffin/Elevators-">Link to Github, where all this stuff is stored!</a>
+             <p>On the left were the results of using the forecasted floor vs. a random floor vs. the perious floor</p>
+             <p>Its kinda hard to tell, but using the forecasted floor made the elevator on avg about 50% closer to where it needed to be</p>
+             <p>And that moving randomly between pickups was just about as good as waiting</p>
+             <p>Theoretical next steps would be to get actual data to work with and try out different models to see if I could improve even more</p>
+             <a href="https://github.com/LeeGriffin/Elevators-">Link to Github, where all this stuff is stored!</a>
+           </div>
+           <div class="image-wrapper-info">
+            <img src="photos/info-photos/screenshot2.png">
            </div>
         </div>
-      </div>
-    </div>
-
+        <script>
+          document.addEventListener("DOMContentLoaded", function(e) {
+            document.body.className = '';
+          });
+        </script>
 </body>
 
 </html>
